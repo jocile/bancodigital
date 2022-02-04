@@ -2,9 +2,13 @@
 
 Projeto criado no desafio do curso da Digital Inovation One para implementar os pilares da programação orientada a objetos.
 
+## Test Driven Development
+
+Desenvolver guiado a testes utilizando Junit 5.
+
 ## Objetivo
 
-Desenvolver um projeto considerando o conhecimento do domínio bancário, abstraindo uma soluação orientada a objetos em java, implementando o seguinte cenário:
+Desenvolver um projeto considerando o conhecimento do domínio bancário, abstraindo uma solução orientada a objetos em java, implementando o seguinte cenário:
 
 "Um banco oferece aos seus clientes dois tipos de contas (corrente e poupança), as quais possuem as funcionalidades de depósito, saque e tranferência (enttre contas da própria instituição)."
 
@@ -21,6 +25,12 @@ Desenvolver um projeto considerando o conhecimento do domínio bancário, abstra
 - Número
 - Saldo
 - Nome
+
+## Operações
+
+- Depósito;
+- Débido;
+- Transferência;
 
 ## Referências
 

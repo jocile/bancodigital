@@ -46,7 +46,7 @@ public abstract class Account implements Operations {
 
   @Override
   public void debit(double value) {
-    amount -= value;
+    if (value < amount) amount -= value;
   }
 
   @Override
