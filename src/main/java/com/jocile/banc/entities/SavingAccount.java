@@ -1,12 +1,12 @@
 package com.jocile.banc.entities;
 
 /**
- * set poupança savings bank account
+ * set savings bank account
  */
-public class PoupancaAccount extends Account {
+public class SavingAccount extends Account {
   private Double taxRate = 0.6;
 
-  public PoupancaAccount(String name) {
+  public SavingAccount(String name) {
     super(name);
   }
 
@@ -28,7 +28,7 @@ public class PoupancaAccount extends Account {
 
   @Override
   public void printExtract() {
-    System.out.println("=== Saving Poupanca Account extract ===");
+    System.out.println("=== Saving Account extract ===");
     super.printInfo();
     System.out.println(
       String.format("interest rate per month: %.2f", this.taxRate)

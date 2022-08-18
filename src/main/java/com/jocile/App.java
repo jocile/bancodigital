@@ -1,8 +1,8 @@
 package com.jocile;
 
 import com.jocile.banc.entities.Account;
-import com.jocile.banc.entities.CurrentAccount;
-import com.jocile.banc.entities.PoupancaAccount;
+import com.jocile.banc.entities.SavingAccount;
+import com.jocile.banc.services.AccountFactory;
 
 /**
  * Hello world!
@@ -11,8 +11,8 @@ import com.jocile.banc.entities.PoupancaAccount;
 public class App {
 
   public static void main(String[] args) {
-    Account cc = new CurrentAccount("João");
-    PoupancaAccount poup = new PoupancaAccount("Pedro");
+    Account cc = AccountFactory.createCurrentAccount("João");
+    SavingAccount poup = AccountFactory.createSavingsAccount("Pedro");
 
     cc.credit(100);
 
