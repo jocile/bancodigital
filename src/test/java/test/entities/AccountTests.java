@@ -1,7 +1,7 @@
 package test.entities;
 
 import com.jocile.banc.entities.Account;
-import com.jocile.banc.entities.CurrentAccount;
+import com.jocile.banc.services.AccountFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ public class AccountTests {
     double amount = 200.0;
     double expectedBalance = 200.0;
 
-    Account cc = new CurrentAccount("João");
+    Account cc = AccountFactory.createCurrentAccount("João");
     cc.credit(amount);
 
     Assertions.assertEquals(expectedBalance, cc.getAmount());
@@ -22,7 +22,7 @@ public class AccountTests {
   public void depositShouldDoNothingWhenNegativeAmount() {
     double expectedBalance = 100.0;
 
-    Account cc = new CurrentAccount("Pedro");
+    Account cc = AccountFactory.createCurrentAccount("Pedro");
     cc.credit(100.0);
     cc.debit(200.0);
 
