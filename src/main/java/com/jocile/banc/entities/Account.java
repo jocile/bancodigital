@@ -44,7 +44,10 @@ public abstract class Account implements Operations {
   }
 
   public void debit(double value) {
-    if (value < amount) amount -= value;
+    if (value > amount) {
+      throw new IllegalArgumentException("Insufficient funds");
+    }
+    amount -= value;
   }
 
   public void transfer(Double value, Account destinationAccount) {

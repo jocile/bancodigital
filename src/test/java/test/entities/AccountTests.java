@@ -42,4 +42,26 @@ public class AccountTests {
     Assertions.assertTrue(expectedValue == cc.getAmount());
     Assertions.assertTrue(result == initialBalance);
   }
+
+  @Test
+  public void withdrawSouldDecreaseBalanceWhenSufficientFunds() {
+    double expectedBalance = 300.0;
+
+    Account cc = AccountFactory.createCurrentAccount("João");
+    cc.credit(800.0);
+    cc.debit(500.0);
+    Assertions.assertEquals(expectedBalance, cc.getAmount());
+  }
+
+  @Test
+  public void withdrawShouldThrowExceptionWhenInsufficientFunds() {
+    Assertions.assertThrows(
+      IllegalArgumentException.class,
+      () -> {
+        Account cc = AccountFactory.createCurrentAccount("João");
+        cc.credit(100.0);
+        cc.debit(101.0);
+      }
+    );
+  }
 }
