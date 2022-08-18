@@ -39,20 +39,23 @@ public abstract class Account implements Operations {
     return this.amount;
   }
 
-  @Override
   public void credit(double value) {
     amount += value;
   }
 
-  @Override
   public void debit(double value) {
     if (value < amount) amount -= value;
   }
 
-  @Override
   public void transfer(Double value, Account destinationAccount) {
     this.debit(value);
     destinationAccount.credit(value);
+  }
+
+  public double fullWithdraw() {
+    double amount = this.amount;
+    this.amount = 0;
+    return amount;
   }
 
   protected void printInfo() {

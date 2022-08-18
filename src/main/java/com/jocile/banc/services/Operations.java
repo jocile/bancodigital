@@ -10,4 +10,6 @@ public interface Operations {
   void transfer(Double value, Account destinationAccount);
 
   void printExtract();
+
+  double fullWithdraw();
 }
